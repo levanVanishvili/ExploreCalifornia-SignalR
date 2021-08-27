@@ -5,6 +5,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Pages\Error.cshtml" />
+    <None Include="Pages\Index.cshtml" />
+    <None Include="Pages\Privacy.cshtml" />
+    <None Include="Pages\Shared\_CookieConsentPartial.cshtml" />
+    <None Include="Pages\Shared\_Layout.cshtml" />
+    <None Include="Pages\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="Pages\_ViewImports.cshtml" />
+    <None Include="Pages\_ViewStart.cshtml" />
+    <None Include="wwwroot\fonts\DejaVuSans-Bold-webfont.svg" />
+    <None Include="wwwroot\fonts\DejaVuSans-BoldOblique-webfont.svg" />
+    <None Include="wwwroot\fonts\DejaVuSans-Oblique-webfont.svg" />
+    <None Include="wwwroot\fonts\DejaVuSans-webfont.svg" />
+    <None Include="wwwroot\fonts\DejaVuSansCondensed-Bold-webfont.svg" />
+    <None Include="wwwroot\fonts\DejaVuSansCondensed-BoldOblique-webfont.svg" />
+    <None Include="wwwroot\fonts\DejaVuSansCondensed-Oblique-webfont.svg" />
+    <None Include="wwwroot\fonts\DejaVuSansCondensed-webfont.svg" />
+    <None Include="wwwroot\fonts\DroidSerif-Bold-webfont.svg" />
+    <None Include="wwwroot\fonts\DroidSerif-BoldItalic-webfont.svg" />
+    <None Include="wwwroot\fonts\DroidSerif-Italic-webfont.svg" />
+    <None Include="wwwroot\fonts\DroidSerif-Regular-webfont.svg" />
+    <None Include="wwwroot\js\index.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 

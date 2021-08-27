@@ -62,9 +62,9 @@
     width: 270px;
 }
 
-    #bottomPanel #messageTextbox {
-        width: 200px;
-    }
+#bottomPanel #messageTextbox {
+    width: 200px;
+}
 
 #chatConnectionInfo {
     position: absolute;
