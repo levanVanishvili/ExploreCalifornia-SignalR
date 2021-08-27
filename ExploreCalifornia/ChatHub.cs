@@ -15,10 +15,10 @@ namespace ExploreCalifornia
             {
                 SenderName = name,
                 Text = text,
-                SentAt = DateTimeOffset.Now
+                SentAt = DateTimeOffset.UtcNow
             };
 
-            await Clients.All.SendAsync("ReceiveMessage", message.SenderName, message.Text, message.SentAt);
+            await Clients.All.SendAsync("ReceiveMessage", message.SenderName, message.SentAt, message.Text);
         }
     }
 }
