@@ -1,5 +1,6 @@
 ﻿using ExploreCalifornia.Models;
 using ExploreCalifornia.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,13 @@ namespace ExploreCalifornia
 
         public override async Task OnConnectedAsync()
         {
+            if (Context.User.Identity.IsAuthenticated)
+            {
+                // Authenticated agents don't need a room
+                await base.OnConnectedAsync();
+                return;
+            }
+
             var roomId = await _chatRoomService.CreateRoom(
                 Context.ConnectionId);
 
@@ -65,6 +73,26 @@ namespace ExploreCalifornia
                 Context.ConnectionId);
 
             await _chatRoomService.SetRoomName(roomId, roomName);
+        }
+
+        [Authorize]
+        public async Task JoinRoom(Guid roomId)
+        {
+            if (roomId == Guid.Empty)
+                throw new ArgumentException("Invalid room ID");
+
+            await Groups.AddToGroupAsync(
+                Context.ConnectionId, roomId.ToString());
+        }
+
+        [Authorize]
+        public async Task LeaveRoom(Guid roomId)
+        {
+            if (roomId == Guid.Empty)
+                throw new ArgumentException("Invalid room ID");
+
+            await Groups.RemoveFromGroupAsync(
+                Context.ConnectionId, roomId.ToString());
         }
     }
 }
