@@ -7,10 +7,12 @@
   <ItemGroup>
     <None Include="Pages\Error.cshtml" />
     <None Include="Pages\Index.cshtml" />
+    <None Include="Pages\Login.cshtml" />
     <None Include="Pages\Privacy.cshtml" />
     <None Include="Pages\Shared\_CookieConsentPartial.cshtml" />
     <None Include="Pages\Shared\_Layout.cshtml" />
     <None Include="Pages\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="Pages\SupportAgent.cshtml" />
     <None Include="Pages\_ViewImports.cshtml" />
     <None Include="Pages\_ViewStart.cshtml" />
     <None Include="wwwroot\fonts\DejaVuSans-Bold-webfont.svg" />
@@ -25,6 +27,7 @@
     <None Include="wwwroot\fonts\DroidSerif-BoldItalic-webfont.svg" />
     <None Include="wwwroot\fonts\DroidSerif-Italic-webfont.svg" />
     <None Include="wwwroot\fonts\DroidSerif-Regular-webfont.svg" />
+    <None Include="wwwroot\js\agent.js" />
     <None Include="wwwroot\js\index.js" />
   </ItemGroup>
 

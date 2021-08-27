@@ -12,10 +12,14 @@ namespace ExploreCalifornia
     public class ChatHub : Hub
     {
         private readonly IChatRoomService _chatRoomService;
+        private readonly IHubContext<AgentHub> _agentHub;
 
-        public ChatHub(IChatRoomService chatRoomService)
+        public ChatHub(
+            IChatRoomService chatRoomService,
+            IHubContext<AgentHub> agentHub)
         {
             _chatRoomService = chatRoomService;
+            _agentHub = agentHub;
         }
 
         public override async Task OnConnectedAsync()
@@ -73,6 +77,11 @@ namespace ExploreCalifornia
                 Context.ConnectionId);
 
             await _chatRoomService.SetRoomName(roomId, roomName);
+
+            await _agentHub.Clients.All
+                .SendAsync(
+                    "ActiveRooms",
+                    await _chatRoomService.GetAllRooms());
         }
 
         [Authorize]
